@@ -25,7 +25,7 @@ class PixelArtPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: theme.primaryColorLight,
                   image: const DecorationImage(
-                    image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                    image: AssetImage("assets/bracelet.png"), //NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
                     fit: BoxFit.cover,
                   ),
                   border: Border.all(
@@ -54,7 +54,7 @@ class PixelArtPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: theme.primaryColorLight,
                       image: const DecorationImage(
-                        image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                        image: AssetImage("assets/bracelet.png"), //NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
                         fit: BoxFit.cover,
                       ),
                       border: Border.all(

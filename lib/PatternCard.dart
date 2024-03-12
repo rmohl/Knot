@@ -23,7 +23,7 @@ class PatternCard extends StatelessWidget {
                     color: theme.primaryColorDark,
                   ),
                   image: DecorationImage(
-                    image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                    image: AssetImage("assets/bracelet.png"), // NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),
