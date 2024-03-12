@@ -65,7 +65,7 @@ class PixelArtPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer(),// Adjust the top padding as needed
+              Spacer(),
               Center(
                 child: Container(
                   width: 50, // Adjust width as needed
@@ -121,6 +121,7 @@ class PixelArtPage extends StatelessWidget {
               ),
             ],
           ),
+          Spacer(),
           Divider(color: theme.primaryColor, height: 1),
           Container(
             color: theme.primaryColor,
