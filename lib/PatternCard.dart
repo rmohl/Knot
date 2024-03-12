@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'Design.dart';
+
 class PatternCard extends StatelessWidget {
   final ThemeData theme;
+  final Design design;
 
-  PatternCard({super.key, required this.theme});
+  PatternCard({super.key, required this.design, required this.theme});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class PatternCard extends StatelessWidget {
                     color: theme.primaryColorDark,
                   ),
                   image: DecorationImage(
-                    image: AssetImage("assets/bracelet.png"), // NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                    image: design.previewPath, // NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'Design.dart';
+import 'DesignListProvider.dart';
 
 class PixelArtPage extends StatelessWidget {
   final ThemeData theme;
@@ -7,6 +10,7 @@ class PixelArtPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final designListProvider = Provider.of<DesignListProvider>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: theme.primaryColor,
@@ -106,6 +110,15 @@ class PixelArtPage extends StatelessWidget {
                         icon: Icon(Icons.bookmark_border, color: theme.primaryColorDark),
                         tooltip: 'Save',
                         onPressed: () {
+                          // Create a new Design object
+                          Design newDesign = Design(
+                            previewPath: AssetImage("assets/bracelet.png"),
+                            pixelPath: AssetImage("assets/bracelet.png"),
+                            knotPath: AssetImage("assets/bracelet.png"),
+                          );
+
+                          // Add the new design to the provider list
+                          designListProvider.addDesign(newDesign);
                         },
                       ),
                       IconButton(
@@ -145,7 +158,6 @@ class PixelArtPage extends StatelessWidget {
                         icon: Icon(Icons.upload, color: theme.primaryColorDark),
                         tooltip: 'upload',
                         onPressed: () {
-                          // Add your onPressed callback here
                         },
                       ),
                     ),
