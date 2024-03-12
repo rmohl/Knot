@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:knotsense/CreatePatternPage.dart';
+import 'package:knotsense/PatternCard.dart';
 
 class HomeContentPage extends StatelessWidget {
-  const HomeContentPage({super.key});
+  final ThemeData theme;
+
+  HomeContentPage({super.key, required this.theme});
 
   @override
   Widget build(BuildContext context) {
@@ -12,18 +15,14 @@ class HomeContentPage extends StatelessWidget {
         children: <Widget>[
           Card(
             child: ListTile(
-              leading: Icon(Icons.image),
-              title: Text('Pattern 1'),
-              subtitle: Text('This is a pattern'),
+              title: Text(
+                  'My Designs:',
+                  style: theme.textTheme.headlineSmall
+              ),
             ),
           ),
-          Card(
-            child: ListTile(
-              leading: Icon(Icons.image),
-              title: Text('Pattern 2'),
-              subtitle: Text('This is a pattern'),
-            ),
-          ),
+          PatternCard(theme: theme),
+          PatternCard(theme: theme),
           GestureDetector(
             onTap: () {
               // Navigate to the detail page when the card is tapped
@@ -31,21 +30,21 @@ class HomeContentPage extends StatelessWidget {
                 builder: (BuildContext context) {
                   return Scaffold(
                     appBar: AppBar(
-                      backgroundColor: Colors.purple,
-                      iconTheme: const IconThemeData(color: Colors.white),
+                      backgroundColor: theme.primaryColor,
+                      iconTheme: IconThemeData(color: theme.primaryColorDark),
                       centerTitle: true,
-                      title: const Text('Create Pattern', style: TextStyle(color: Colors.white)),
+                      title: Text('Create Pattern', style: theme.textTheme.displaySmall),
                     ),
-                    body: CreatePatternPage(),
+                    body: CreatePatternPage(theme: theme),
                   );
                 },
               ));
             },
             child: Card(
               child: ListTile(
-                leading: Icon(Icons.add),
-                title: Text('Create'),
-                subtitle: Text('Add new pattern'),
+                leading: Icon(Icons.add, color: theme.primaryColorDark),
+                title: Text('Create', style: theme.textTheme.bodyLarge),
+                subtitle: Text('Add new pattern', style: theme.textTheme.bodyMedium),
               ),
             ),
           ),

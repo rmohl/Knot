@@ -20,10 +20,10 @@ class _HomePageState extends State<HomePage> {
     final ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple,
-        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: theme.primaryColor,
+        iconTheme: IconThemeData(color: theme.primaryColorDark),
         centerTitle: true,
-        title: Text(widget.title, style: TextStyle(color: Colors.white)),
+        title: Text(widget.title, style: theme.textTheme.displaySmall),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.settings),
@@ -33,15 +33,15 @@ class _HomePageState extends State<HomePage> {
                 builder: (BuildContext context) {
                   return Scaffold(
                     appBar: AppBar(
-                      backgroundColor: Colors.purple,
-                      iconTheme: const IconThemeData(color: Colors.white),
+                      backgroundColor: theme.primaryColor,
+                      iconTheme: IconThemeData(color: Theme.of(context).primaryColorDark),
                       centerTitle: true,
-                      title: const Text('Settings page', style: TextStyle(color: Colors.white)),
+                      title: Text('Settings page', style: theme.textTheme.displaySmall),
                     ),
-                    body: const Center(
+                    body: Center(
                       child: Text(
                         'This is the settings page',
-                        style: TextStyle(fontSize: 24),
+                        style: theme.textTheme.headlineMedium,
                       ),
                     ),
                   );
@@ -57,32 +57,32 @@ class _HomePageState extends State<HomePage> {
             currentPageIndex = index;
           });
         },
-        indicatorColor: Colors.amber,
+        indicatorColor: theme.primaryColorLight,
         selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
+        destinations: <Widget>[
           NavigationDestination(
-            selectedIcon: Icon(Icons.add_circle),
-            icon: Icon(Icons.add_circle_outline),
+            selectedIcon: Icon(Icons.add_circle, color: theme.primaryColorDark),
+            icon: Icon(Icons.add_circle_outline, color: theme.primaryColorDark),
             label: 'New Pattern',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
+            selectedIcon: Icon(Icons.home, color: theme.primaryColorDark),
+            icon: Icon(Icons.home_outlined, color: theme.primaryColorDark),
             label: 'Home',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Icons.help),
-            icon: Icon(Icons.help_outline),
+            selectedIcon: Icon(Icons.help, color: theme.primaryColorDark),
+            icon: Icon(Icons.help_outline, color: theme.primaryColorDark),
             label: 'Instructions',
           ),
         ],
       ),
       body: <Widget>[
         /// New Pattern page
-        CreatePatternPage(),
+        CreatePatternPage(theme: theme),
 
         /// Home page
-        HomeContentPage(),
+        HomeContentPage(theme: theme),
 
         /// Instructions page
         InstructionsPage(theme: theme),

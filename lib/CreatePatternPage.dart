@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:knotsense/PixelArtPage.dart';
 
 class CreatePatternPage extends StatelessWidget {
-  const CreatePatternPage({super.key});
+  final ThemeData theme;
+
+  CreatePatternPage({super.key, required this.theme});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.all(8.0),
       child: Column(
         children: <Widget>[
@@ -13,7 +16,7 @@ class CreatePatternPage extends StatelessWidget {
             child: ListTile(
               title: Text(
                   'Design Method:',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)
+                  style: theme.textTheme.headlineSmall
               ),
             ),
           ),
@@ -22,9 +25,19 @@ class CreatePatternPage extends StatelessWidget {
               title: Text('Normal Pattern'),
             ),
           ),
-          Card(
-            child: ListTile(
-              title: Text('Pixel Art'),
+          GestureDetector(
+            onTap: () {
+              // Navigate to the detail page when the card is tapped
+              Navigator.push(context, MaterialPageRoute<void>(
+                builder: (BuildContext context) {
+                  return PixelArtPage(theme: theme);
+                },
+              ));
+            },
+            child: Card(
+              child: ListTile(
+                title: Text('Pixel Art'),
+              ),
             ),
           ),
         ],
