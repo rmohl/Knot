@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:knotsense/PixelArtEditPage.dart';
 
 import 'Design.dart';
 
 class PatternCard extends StatelessWidget {
   final ThemeData theme;
+  final int index;
   final Design design;
 
-  PatternCard({super.key, required this.design, required this.theme});
+  PatternCard({super.key, required this.design, required this.index, required this.theme});
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +40,12 @@ class PatternCard extends StatelessWidget {
                     icon: Icon(Icons.design_services, color: theme.primaryColorDark),
                     tooltip: 'Edit',
                     onPressed: () {
+                      // Navigate to the edit page when the edit icon is tapped
+                      Navigator.push(context, MaterialPageRoute<void>(
+                        builder: (BuildContext context) {
+                          return PixelArtEditPage(index: index, theme: theme);
+                        },
+                      ));
                     },
                   ),
                   IconButton(

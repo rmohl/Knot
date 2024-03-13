@@ -15,4 +15,13 @@ class DesignListProvider extends ChangeNotifier {
     designList.remove(oldDesign);
     notifyListeners();
   }
+
+  void removeDesignAtIndex(int index) {
+    if (index >= 0 && index < designList.length) {
+      designList.removeAt(index);
+      notifyListeners();
+    } else {
+      throw ArgumentError('Invalid index: $index');
+    }
+  }
 }
