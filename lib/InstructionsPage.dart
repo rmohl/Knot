@@ -90,9 +90,9 @@ class InstructionsPage extends StatelessWidget {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
-                                      Image.asset("assets/forward2.jpeg", scale: 4.75),
+                                      Image.asset("assets/forward2.jpeg", scale: 5),
                                       hSpace,
-                                      Image.asset("assets/forward3.jpeg", scale: 4.75),
+                                      Image.asset("assets/forward3.jpeg", scale: 5),
                                     ],
                                   )
                               ),
@@ -113,9 +113,9 @@ class InstructionsPage extends StatelessWidget {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
-                                      Image.asset("assets/backward2.jpeg", scale: 4.75),
+                                      Image.asset("assets/backward2.jpeg", scale: 5),
                                       hSpace,
-                                      Image.asset("assets/backward3.jpeg", scale: 4.75),
+                                      Image.asset("assets/backward3.jpeg", scale: 5),
                                     ],
                                   )
                               ),
@@ -136,9 +136,9 @@ class InstructionsPage extends StatelessWidget {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
-                                      Image.asset("assets/forward2.jpeg", scale: 4.75),
+                                      Image.asset("assets/forward2.jpeg", scale: 5),
                                       hSpace,
-                                      Image.asset("assets/forward3.jpeg", scale: 4.75),
+                                      Image.asset("assets/forward3.jpeg", scale: 5),
                                     ],
                                   )
                               ),
@@ -157,9 +157,9 @@ class InstructionsPage extends StatelessWidget {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
-                                      Image.asset("assets/forward-backward2.jpeg", scale: 4.75),
+                                      Image.asset("assets/forward-backward2.jpeg", scale: 5),
                                       hSpace,
-                                      Image.asset("assets/forward-backward3.jpeg", scale: 4.75),
+                                      Image.asset("assets/forward-backward3.jpeg", scale: 5),
                                     ],
                                   )
                               ),
@@ -179,9 +179,9 @@ class InstructionsPage extends StatelessWidget {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
-                                      Image.asset("assets/backward2.jpeg", scale: 4.75),
+                                      Image.asset("assets/backward2.jpeg", scale: 5),
                                       hSpace,
-                                      Image.asset("assets/backward3.jpeg", scale: 4.75),
+                                      Image.asset("assets/backward3.jpeg", scale: 5),
                                     ],
                                   )
                               ),
@@ -198,9 +198,9 @@ class InstructionsPage extends StatelessWidget {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
-                                      Image.asset("assets/backward-forward2.jpeg", scale: 4.75),
+                                      Image.asset("assets/backward-forward2.jpeg", scale: 5),
                                       hSpace,
-                                      Image.asset("assets/backward-forward3.jpeg", scale: 4.75),
+                                      Image.asset("assets/backward-forward3.jpeg", scale: 5),
                                     ],
                                   )
                               ),
