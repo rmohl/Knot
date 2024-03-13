@@ -63,6 +63,8 @@ flutter:
   assets:
     - assets/bracelet.png
     - assets/pattern.png
+    - assets/pattern-example.png
+    - assets/knot.jpeg
     - assets/forward1.jpeg
     - assets/forward2.jpeg
     - assets/forward3.jpeg
