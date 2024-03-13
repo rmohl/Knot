@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:knotsense/CreatePatternPage.dart';
 import 'package:knotsense/PatternCard.dart';
+import 'package:provider/provider.dart';
+
+import 'DesignListProvider.dart';
 
 class HomeContentPage extends StatelessWidget {
   final ThemeData theme;
@@ -9,6 +12,8 @@ class HomeContentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final designListProvider = Provider.of<DesignListProvider>(context);
+
     return Padding(
       padding: EdgeInsets.all(8.0),
       child: Column(
@@ -21,8 +26,8 @@ class HomeContentPage extends StatelessWidget {
               ),
             ),
           ),
-          PatternCard(theme: theme),
-          PatternCard(theme: theme),
+          // Pattern Cards for each design
+          ...designListProvider.list.map((design) => PatternCard(design: design, theme: theme)),
           GestureDetector(
             onTap: () {
               // Navigate to the detail page when the card is tapped
