@@ -114,11 +114,19 @@ class PixelArtPage extends StatelessWidget {
                           Design newDesign = Design(
                             previewPath: AssetImage("assets/bracelet.png"),
                             pixelPath: AssetImage("assets/bracelet.png"),
-                            knotPath: AssetImage("assets/bracelet.png"),
+                            knotPath: AssetImage("assets/pattern.png"),
                           );
 
-                          // Add the new design to the provider list
+                          /// Add the new design to the provider list
                           designListProvider.addDesign(newDesign);
+
+                          /// Notify the user
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('New design saved'),
+                              duration: Duration(seconds: 2),
+                            ),
+                          );
                         },
                       ),
                       IconButton(

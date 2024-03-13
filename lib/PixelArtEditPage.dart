@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:knotsense/Design.dart';
 import 'package:provider/provider.dart';
 import 'DesignListProvider.dart';
 
 class PixelArtEditPage extends StatelessWidget {
+  final Design design;
   final ThemeData theme;
   final int index;
 
-  PixelArtEditPage({super.key, required this.index, required this.theme});
+  PixelArtEditPage({super.key, required this.design, required this.index, required this.theme});
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +30,8 @@ class PixelArtEditPage extends StatelessWidget {
                 height: 50, // Adjust height as needed
                 decoration: BoxDecoration(
                   color: theme.primaryColorLight,
-                  image: const DecorationImage(
-                    image: AssetImage("assets/bracelet.png"), //NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                  image: DecorationImage(
+                    image: design.previewPath,
                     fit: BoxFit.cover,
                   ),
                   border: Border.all(
@@ -57,8 +59,8 @@ class PixelArtEditPage extends StatelessWidget {
                     height: 200, // Adjust height as needed
                     decoration: BoxDecoration(
                       color: theme.primaryColorLight,
-                      image: const DecorationImage(
-                        image: AssetImage("assets/bracelet.png"), //NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                      image: DecorationImage(
+                        image: design.pixelPath,
                         fit: BoxFit.cover,
                       ),
                       border: Border.all(

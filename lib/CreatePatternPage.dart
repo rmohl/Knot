@@ -20,11 +20,6 @@ class CreatePatternPage extends StatelessWidget {
               ),
             ),
           ),
-          Card(
-            child: ListTile(
-              title: Text('Normal Pattern'),
-            ),
-          ),
           GestureDetector(
             onTap: () {
               // Navigate to the detail page when the card is tapped

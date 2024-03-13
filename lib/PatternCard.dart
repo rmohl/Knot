@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:knotsense/PixelArtEditPage.dart';
+import 'package:knotsense/ViewPatternPage.dart';
 
 import 'Design.dart';
 
@@ -28,7 +29,7 @@ class PatternCard extends StatelessWidget {
                     color: theme.primaryColorDark,
                   ),
                   image: DecorationImage(
-                    image: design.previewPath, // NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                    image: design.previewPath,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -43,7 +44,7 @@ class PatternCard extends StatelessWidget {
                       // Navigate to the edit page when the edit icon is tapped
                       Navigator.push(context, MaterialPageRoute<void>(
                         builder: (BuildContext context) {
-                          return PixelArtEditPage(index: index, theme: theme);
+                          return PixelArtEditPage(design: design, index: index, theme: theme);
                         },
                       ));
                     },
@@ -52,6 +53,11 @@ class PatternCard extends StatelessWidget {
                     icon: Icon(Icons.visibility, color: theme.primaryColorDark),
                     tooltip: 'View',
                     onPressed: () {
+                      Navigator.push(context, MaterialPageRoute<void>(
+                        builder: (BuildContext context) {
+                          return ViewPatternPage(design: design, index: index, theme: theme);
+                        },
+                      ));
                     },
                   ),
                 ],
