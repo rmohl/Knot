@@ -75,6 +75,7 @@ flutter:
     - assets/backward-forward1.jpeg
     - assets/backward-forward2.jpeg
     - assets/backward-forward3.jpeg
+    - assets/knot_brown.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
