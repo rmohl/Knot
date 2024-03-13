@@ -26,12 +26,15 @@ class MyApp extends StatelessWidget {
           headlineMedium: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: textBrown), // Custom headline text style with orange color
           headlineSmall: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: textBrown), // Custom headline text style with purple color
           titleLarge: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: textBrown), // Custom headline text style with teal color
+          titleMedium: TextStyle(fontSize: 16, color: textBrown, fontWeight: FontWeight.bold, decoration: TextDecoration.underline),
           bodyLarge: TextStyle(fontSize: 16, color: textBrown), // Custom body text style with black color
           bodyMedium: TextStyle(fontSize: 14, color: textBrown), // Custom body text style with grey color
           labelSmall: TextStyle(fontSize: 12, color: textBrown), // Custom body text style with grey color
         ),
+
         scaffoldBackgroundColor: Color(0xECFFFFFF), // Change this color to the desired color
       ),
+
       title: 'KnotSense App',
       home: const HomePage(),
     );
