@@ -23,7 +23,21 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: theme.primaryColor,
         iconTheme: IconThemeData(color: theme.primaryColorDark),
         centerTitle: true,
-        title: Text(widget.title, style: theme.textTheme.displaySmall),
+        title: Row(
+          children: [
+            SizedBox(width: 60),
+            Image.asset(
+              'assets/knot_brown.png',
+              width: 50, // Set width of the image
+              height: 35, // Set height of the image
+            ),
+            SizedBox(width: 8), // Adjust spacing between the image and text
+            Text(
+              widget.title,
+              style: theme.textTheme.displaySmall,
+            ),
+          ],
+        ),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.settings),
