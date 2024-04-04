@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:knotsense/Design.dart';
+import 'KnotPattern.dart';
 
 class ViewPatternPage extends StatelessWidget {
   final ThemeData theme;
@@ -47,22 +48,23 @@ class ViewPatternPage extends StatelessWidget {
           ),
           Divider(color: theme.primaryColor, height: 2, endIndent: 0),
           Padding(
-            padding: const EdgeInsets.only(top: 15), // Adjust the top padding as needed
+            padding: const EdgeInsets.only(top: 30), // Adjust the top padding as needed
             child: Center(
               child: Container(
-                width: 200, // Adjust width as needed
+                width: 270, // Adjust width as needed
                 height: 340, // Adjust height as needed
-                decoration: BoxDecoration(
-                  color: theme.primaryColorLight,
-                  image: DecorationImage(
-                    image: design.knotPath,
-                    fit: BoxFit.cover,
-                  ),
-                  border: Border.all(
-                      width: 4,
-                      color: theme.primaryColorDark
-                  ),
-                ),
+                // decoration: BoxDecoration(
+                //   color: theme.primaryColorLight,
+                //   image: DecorationImage(
+                //     image: design.knotPath,
+                //     fit: BoxFit.cover,
+                //   ),
+                //   border: Border.all(
+                //       width: 4,
+                //       color: theme.primaryColorDark
+                //   ),
+                // ),
+                child: KnotPattern()
               ),
             ),
           ),
