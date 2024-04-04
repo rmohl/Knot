@@ -1,13 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:knotsense/Design.dart';
+import 'package:flutter/services.dart';
+import 'dart:convert';
+import 'Design.dart';
 import 'KnotPattern.dart';
 
-class ViewPatternPage extends StatelessWidget {
+class ViewPatternPage extends StatefulWidget {
   final ThemeData theme;
   final Design design;
   final int index;
 
   ViewPatternPage({super.key, required this.design, required this.index, required this.theme});
+
+  @override
+  ViewPatternPageState createState() => ViewPatternPageState(design: design, index: index, theme: theme);
+}
+
+class ViewPatternPageState extends State<ViewPatternPage> {
+  ViewPatternPageState({required this.design, required this.index, required this.theme});
+  final ThemeData theme;
+  final Design design;
+  final int index;
+  List braceletData = [];
+
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/bracelet.json');
+    final data = await json.decode(response);
+    setState(() {
+      braceletData = data[0]["knots"];
+    });
+  }
+
+  @override
+  void initState() {
+    readJson();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,18 +80,7 @@ class ViewPatternPage extends StatelessWidget {
               child: Container(
                 width: 270, // Adjust width as needed
                 height: 340, // Adjust height as needed
-                // decoration: BoxDecoration(
-                //   color: theme.primaryColorLight,
-                //   image: DecorationImage(
-                //     image: design.knotPath,
-                //     fit: BoxFit.cover,
-                //   ),
-                //   border: Border.all(
-                //       width: 4,
-                //       color: theme.primaryColorDark
-                //   ),
-                // ),
-                child: KnotPattern()
+                child: KnotPattern(knotData: braceletData)
               ),
             ),
           ),
