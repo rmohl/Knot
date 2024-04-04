@@ -25,7 +25,7 @@ class CreatePatternPage extends StatelessWidget {
               // Navigate to the detail page when the card is tapped
               Navigator.push(context, MaterialPageRoute<void>(
                 builder: (BuildContext context) {
-                  return PixelArtPage(theme: theme);
+                  return PixelArtPage(theme: theme, index: -1);
                 },
               ));
             },

@@ -5,9 +5,11 @@ import 'DesignListProvider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PixelArtPage extends StatefulWidget {
+  final Design? design;
   final ThemeData theme;
+  final int index; // Negative on create
 
-  PixelArtPage({super.key, required this.theme});
+  PixelArtPage({super.key, required this.theme, required this.index, this.design});
 
   @override
   _PixelArtPageState createState() => _PixelArtPageState();
@@ -43,8 +45,8 @@ class _PixelArtPageState extends State<PixelArtPage> {
                 height: 50, // Adjust height as needed
                 decoration: BoxDecoration(
                   color: widget.theme.primaryColorLight,
-                  image: const DecorationImage(
-                    image: AssetImage("assets/bracelet.png"), //NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                  image: DecorationImage(
+                    image: widget.index == -1 ? AssetImage("assets/bracelet.png") : widget.design?.previewPath ?? AssetImage("assets/bracelet.png"),
                     fit: BoxFit.cover,
                   ),
                   border: Border.all(
@@ -73,8 +75,8 @@ class _PixelArtPageState extends State<PixelArtPage> {
                     height: 200, // Adjust height as needed
                     decoration: BoxDecoration(
                       color: widget.theme.primaryColorLight,
-                      image: const DecorationImage(
-                        image: AssetImage("assets/bracelet.png"), //NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                      image: DecorationImage(
+                        image: widget.index == -1 ? AssetImage("assets/bracelet.png") : widget.design?.pixelPath ?? AssetImage("assets/bracelet.png"),
                         fit: BoxFit.cover,
                       ),
                       border: Border.all(
@@ -150,6 +152,48 @@ class _PixelArtPageState extends State<PixelArtPage> {
                       ),
                       Divider(color: widget.theme.primaryColor),
                       Spacer(),
+                      Visibility(
+                        visible: widget.index != -1,
+                          child: IconButton(
+                            icon: Icon(Icons.delete_outline, color: widget.theme.primaryColorDark),
+                            tooltip: 'Delete',
+                            onPressed: () {
+                              /// Delete Confirmation
+                              showDialog(
+                                context: context,
+                                barrierDismissible: true,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: const Text('Delete Design'),
+                                    content: const SingleChildScrollView(
+                                      child: ListBody(
+                                        children: <Widget>[
+                                          Text('Are you sure you want to delete this design?'),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        child: const Text('No', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.indigo)),
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                      ),
+                                      TextButton(
+                                        child: const Text('Yes', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.indigo)),
+                                        onPressed: () {
+                                          /// Delete this design
+                                          designListProvider.removeDesignAtIndex(widget.index);
+                                          Navigator.of(context).popUntil((route) => route.isFirst);
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                          ),
+                      ),
                       IconButton(
                         icon: Icon(Icons.bookmark_border, color: widget.theme.primaryColorDark),
                         tooltip: 'Save',
@@ -161,7 +205,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             knotPath: AssetImage("assets/pattern.png"),
                           );
 
-                          /// Add the new design to the provider list
+                          /// Add the new design to the provider list (CHANGE BEHAVIOUR FOR EDIT)
                           designListProvider.addDesign(newDesign);
 
                           /// Notify the user
@@ -195,27 +239,33 @@ class _PixelArtPageState extends State<PixelArtPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      width: 45,
-                      height: 45,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.pinkAccent,
-                        border: Border.all(
-                          width: 2,
-                          color: widget.theme.primaryColorDark
+                    Visibility(
+                      visible: _selectedTool == 0, // Show the first container if _selectedTool is 0
+                      child: Container(
+                        width: 45,
+                        height: 45,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Colors.pinkAccent,
+                          border: Border.all(
+                            width: 2,
+                            color: widget.theme.primaryColorDark,
+                          ),
                         ),
                       ),
                     ),
-                    Container(
-                      width: 45,
-                      height: 45,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.purpleAccent,
-                        border: Border.all(
+                    Visibility(
+                      visible: _selectedTool == 0, // Show the second container if _selectedTool is 0
+                      child: Container(
+                        width: 45,
+                        height: 45,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Colors.purpleAccent,
+                          border: Border.all(
                             width: 2,
-                            color: widget.theme.primaryColorDark
+                            color: widget.theme.primaryColorDark,
+                          ),
                         ),
                       ),
                     ),

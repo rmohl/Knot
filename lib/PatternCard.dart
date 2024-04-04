@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:knotsense/PixelArtEditPage.dart';
 import 'package:knotsense/ViewPatternPage.dart';
 
 import 'Design.dart';
+import 'PixelArtPage.dart';
 
 class PatternCard extends StatelessWidget {
   final ThemeData theme;
@@ -44,7 +44,7 @@ class PatternCard extends StatelessWidget {
                       // Navigate to the edit page when the edit icon is tapped
                       Navigator.push(context, MaterialPageRoute<void>(
                         builder: (BuildContext context) {
-                          return PixelArtEditPage(design: design, index: index, theme: theme);
+                          return PixelArtPage(design: design, index: index, theme: theme);
                         },
                       ));
                     },
