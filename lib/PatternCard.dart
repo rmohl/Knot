@@ -41,6 +41,15 @@ class PatternCard extends StatelessWidget {
                     icon: Icon(Icons.design_services, color: theme.primaryColorDark),
                     tooltip: 'Edit',
                     onPressed: () {
+                      /// Notify the user of edit autosave
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Changes Will Autosave'),
+                          duration: Duration(seconds: 2),
+                          showCloseIcon: true,
+                        ),
+                      );
+
                       // Navigate to the edit page when the edit icon is tapped
                       Navigator.push(context, MaterialPageRoute<void>(
                         builder: (BuildContext context) {

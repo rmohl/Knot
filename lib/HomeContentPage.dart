@@ -33,7 +33,7 @@ class HomeContentPage extends StatelessWidget {
               child: ListTile(
                 title: Text(
                     'My Designs:',
-                    style: theme.textTheme.headlineSmall
+                    style: theme.textTheme.displaySmall
                 ),
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:knotsense/CreatePatternPage.dart';
 import 'package:knotsense/HomeContentPage.dart';
 import 'package:knotsense/InstructionsPage.dart';
@@ -67,6 +68,7 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
+          HapticFeedback.selectionClick();
           setState(() {
             currentPageIndex = index;
           });

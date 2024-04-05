@@ -22,6 +22,16 @@ class Design {
 
 // Default size for the pixelGrid list
   static const int defaultSize = 18;
+
+  // Method to check if any single PixelInfo color in pixelGrid is blank
+  bool hasBlank() {
+    for (final pixelInfo in pixelGrid) {
+      if (pixelInfo.color == Colors.white) {
+        return true; // Return true if any pixel is blank
+      }
+    }
+    return false; // Return false if all pixels have colors
+  }
 }
 
 class PixelInfo {

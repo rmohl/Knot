@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'Design.dart';
 import 'DesignListProvider.dart';
@@ -109,6 +110,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[0].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[0].color = _selectedColour;
                                 });
@@ -118,6 +120,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[1].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[1].color = _selectedColour;
                                 });
@@ -127,6 +130,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[2].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[2].color = _selectedColour;
                                 });
@@ -136,6 +140,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[3].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[3].color = _selectedColour;
                                 });
@@ -149,6 +154,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[4].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[4].color = _selectedColour;
                                 });
@@ -158,6 +164,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[5].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[5].color = _selectedColour;
                                 });
@@ -167,6 +174,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[6].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[6].color = _selectedColour;
                                 });
@@ -180,6 +188,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[7].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[7].color = _selectedColour;
                                 });
@@ -189,6 +198,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[8].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[8].color = _selectedColour;
                                 });
@@ -198,6 +208,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[9].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[9].color = _selectedColour;
                                 });
@@ -207,6 +218,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[10].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[10].color = _selectedColour;
                                 });
@@ -220,6 +232,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[11].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[11].color = _selectedColour;
                                 });
@@ -229,6 +242,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[12].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[12].color = _selectedColour;
                                 });
@@ -238,6 +252,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[13].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[13].color = _selectedColour;
                                 });
@@ -251,6 +266,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[14].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[14].color = _selectedColour;
                                 });
@@ -260,6 +276,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[15].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[15].color = _selectedColour;
                                 });
@@ -269,6 +286,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[16].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[16].color = _selectedColour;
                                 });
@@ -278,6 +296,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             MyStatefulContainer(
                               color: newDesign.pixelGrid[17].color,
                               onTap: () {
+                                HapticFeedback.mediumImpact();
                                 setState(() {
                                   newDesign.pixelGrid[17].color = _selectedColour;
                                 });
@@ -321,11 +340,11 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               icon: Icon(Icons.border_color, color: widget.theme.primaryColorDark),
                               tooltip: 'Colour Pen',
                               onPressed: () {
+                                HapticFeedback.selectionClick();
                                 setState(() {
                                   _selectedTool = 0;
                                   _selectedColour = color1;
                                 });
-                                // Add your onPressed logic here
                               },
                             ),
                           ),
@@ -347,11 +366,11 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               icon: Icon(FontAwesomeIcons.eraser, color: widget.theme.primaryColorDark),
                               tooltip: 'Eraser',
                               onPressed: () {
+                                HapticFeedback.selectionClick();
                                 setState(() {
                                   _selectedTool = 1;
                                   _selectedColour = Colors.white;
                                 });
-                                // Add your onPressed logic here
                               },
                             ),
                           ),
@@ -366,6 +385,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             icon: Icon(Icons.delete_outline, color: widget.theme.primaryColorDark),
                             tooltip: 'Delete',
                             onPressed: () {
+                              HapticFeedback.lightImpact();
                               /// Delete Confirmation
                               showDialog(
                                 context: context,
@@ -403,35 +423,103 @@ class _PixelArtPageState extends State<PixelArtPage> {
                           ),
                       ),
                       /// Save
-                      IconButton(
-                        icon: Icon(Icons.bookmark_border, color: widget.theme.primaryColorDark),
-                        tooltip: 'Save',
-                        onPressed: () {
-                          /// Check for create or edit
-                          if (widget.index == -1){
-                            /// Add the new design to the provider list
-                            designListProvider.addDesign(newDesign);
-                          }
-                          else{
-                            /// Add the new design to the provider list
-                            designListProvider.setDesignAtIndex(widget.index, newDesign);
-                          }
+                      Visibility(
+                        visible: widget.index == -1,
+                        child: IconButton(
+                          icon: Icon(FontAwesomeIcons.floppyDisk, color: widget.theme.primaryColorDark),
+                          tooltip: 'Save',
+                          onPressed: () {
+                            /// Check for create with blank pixels
+                            if (newDesign.hasBlank()){
+                              /// No Blanks Notif
+                              HapticFeedback.lightImpact();
+                              showDialog(
+                                context: context,
+                                barrierDismissible: true,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: const Text('Blank Pixels'),
+                                    content: const SingleChildScrollView(
+                                      child: ListBody(
+                                        children: <Widget>[
+                                          Text('Make Sure to fill all pixels with colour.'),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        child: const Text('OK', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.indigo)),
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            }
+                            else{
+                              /// Add the new design to the provider list
+                              designListProvider.addDesign(newDesign);
 
-                          /// Notify the user
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('New design saved'),
-                              duration: Duration(seconds: 2),
-                            ),
-                          );
-                        },
+                              /// Notify the user of create
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text('New design saved'),
+                                  duration: Duration(seconds: 2),
+                                ),
+                              );
+                              Navigator.of(context).popUntil((route) => route.isFirst);
+                            }
+                          },
+                        ),
                       ),
                       /// Exit
                       IconButton(
                         icon: Icon(Icons.exit_to_app, color: widget.theme.primaryColorDark),
                         tooltip: 'Exit',
                         onPressed: () {
-                          Navigator.of(context).popUntil((route) => route.isFirst);
+                          ///Check for Edit with blank pixels
+                          if(widget.index != -1 && newDesign.hasBlank()){
+                            /// No Blanks Notif
+                            HapticFeedback.mediumImpact();
+                            showDialog(
+                              context: context,
+                              barrierDismissible: true,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: const Text('Blank Pixels'),
+                                  content: const SingleChildScrollView(
+                                    child: ListBody(
+                                      children: <Widget>[
+                                        Text('Make Sure to fill all pixels with colour.'),
+                                      ],
+                                    ),
+                                  ),
+                                  actions: <Widget>[
+                                    TextButton(
+                                      child: const Text('OK', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.indigo)),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
+                          else{
+                            if (widget.index != -1){
+                              /// Notify the user of edit
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text('Changes saved'),
+                                  duration: Duration(seconds: 2),
+                                ),
+                              );
+                            }
+                            Navigator.of(context).popUntil((route) => route.isFirst);
+                          }
                         },
                       ),
                     ],
@@ -467,6 +555,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                           ),
                         ),
                         onTap: () {
+                          HapticFeedback.selectionClick();
                           setState(() {
                             _selectedColour = color1;
                           });
@@ -490,6 +579,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                           ),
                         ),
                         onTap: () {
+                          HapticFeedback.selectionClick();
                           setState(() {
                             _selectedColour = color2;
                           });
