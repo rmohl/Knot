@@ -1,40 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'Design.dart';
+import 'DesignListProvider.dart';
 import 'KnotPattern.dart';
 import 'BraceletAlgorithm.dart';
 
 class ViewPatternPage extends StatefulWidget {
   final ThemeData theme;
-  final Design design;
   final int index;
 
-  ViewPatternPage({super.key, required this.design, required this.index, required this.theme});
+  ViewPatternPage({super.key, required this.index, required this.theme});
 
   @override
-  ViewPatternPageState createState() => ViewPatternPageState(design: design, index: index, theme: theme);
+  ViewPatternPageState createState() => ViewPatternPageState(index: index, theme: theme);
 }
 
 class ViewPatternPageState extends State<ViewPatternPage> {
-  ViewPatternPageState({required this.design, required this.index, required this.theme});
+  ViewPatternPageState({required this.index, required this.theme});
   final ThemeData theme;
-  final Design design;
   final int index;
-
-  PixelToPattern algorithmGenerator = PixelToPattern();
 
   List<String> knotData = [];
   List<Color> colourData = [];
 
   @override
-  void initState() {
-
-    knotData = algorithmGenerator.getKnotInfo();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
+    final designListProvider = Provider.of<DesignListProvider>(context);
+
+    List<int> numData = designListProvider.getDesignAtIndex(index).colorsToNums();
+
+    PixelToPattern algorithmGenerator = PixelToPattern(pattern: numData);
+
+    setState(() {
+      knotData = algorithmGenerator.getKnotInfo();
+    });
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: theme.primaryColor,
@@ -53,7 +56,7 @@ class ViewPatternPageState extends State<ViewPatternPage> {
                 decoration: BoxDecoration(
                   color: theme.primaryColorLight,
                   image: DecorationImage(
-                    image: design.previewPath, //NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                    image: AssetImage('assets/pattern.png'),
                     fit: BoxFit.cover,
                   ),
                   border: Border.all(

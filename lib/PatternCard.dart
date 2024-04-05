@@ -64,7 +64,7 @@ class PatternCard extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute<void>(
                         builder: (BuildContext context) {
-                          return ViewPatternPage(design: design, index: index, theme: theme);
+                          return ViewPatternPage(index: index, theme: theme);
                         },
                       ));
                     },
