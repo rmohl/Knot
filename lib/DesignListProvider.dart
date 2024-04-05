@@ -24,4 +24,23 @@ class DesignListProvider extends ChangeNotifier {
       throw ArgumentError('Invalid index: $index');
     }
   }
+
+  // Getter for accessing Design object at a specific index
+  Design getDesignAtIndex(int index) {
+    if (index >= 0 && index < designList.length) {
+      return designList[index];
+    } else {
+      throw ArgumentError('Invalid index: $index');
+    }
+  }
+
+  // Setter for modifying Design object at a specific index
+  void setDesignAtIndex(int index, Design newDesign) {
+    if (index >= 0 && index < designList.length) {
+      designList[index] = newDesign;
+      notifyListeners();
+    } else {
+      throw ArgumentError('Invalid index: $index');
+    }
+  }
 }

@@ -26,6 +26,11 @@ class _PixelArtPageState extends State<PixelArtPage> {
     super.initState();
     _selectedTool = 0;
     _selectedColour = color1;
+
+    resetNewDesign();
+  }
+
+  void resetNewDesign() {
     newDesign = Design(
       previewPath: AssetImage("assets/bracelet.png"),
       pixelPath: AssetImage("assets/bracelet.png"),
@@ -35,6 +40,11 @@ class _PixelArtPageState extends State<PixelArtPage> {
 
   Widget build(BuildContext context) {
     final designListProvider = Provider.of<DesignListProvider>(context);
+
+    if (widget.index != -1){
+      newDesign = designListProvider.getDesignAtIndex(widget.index);
+    }
+
 
     return Scaffold(
       /// App Bar
@@ -397,8 +407,15 @@ class _PixelArtPageState extends State<PixelArtPage> {
                         icon: Icon(Icons.bookmark_border, color: widget.theme.primaryColorDark),
                         tooltip: 'Save',
                         onPressed: () {
-                          /// Add the new design to the provider list (CHANGE BEHAVIOUR FOR EDIT)
-                          designListProvider.addDesign(newDesign);
+                          /// Check for create or edit
+                          if (widget.index == -1){
+                            /// Add the new design to the provider list
+                            designListProvider.addDesign(newDesign);
+                          }
+                          else{
+                            /// Add the new design to the provider list
+                            designListProvider.setDesignAtIndex(widget.index, newDesign);
+                          }
 
                           /// Notify the user
                           ScaffoldMessenger.of(context).showSnackBar(

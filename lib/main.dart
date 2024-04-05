@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
 
     return ChangeNotifierProvider(create: (context) => DesignListProvider(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: Colors.pink[100],
           primaryColorLight: Colors.pink[50],
