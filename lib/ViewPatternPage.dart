@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'Design.dart';
 import 'KnotPattern.dart';
+import 'BraceletAlgorithm.dart';
 
 class ViewPatternPage extends StatefulWidget {
   final ThemeData theme;
@@ -19,8 +20,18 @@ class ViewPatternPageState extends State<ViewPatternPage> {
   final ThemeData theme;
   final Design design;
   final int index;
+
+  PixelToPattern algorithmGenerator = PixelToPattern();
+
   List<String> knotData = [];
   List<Color> colourData = [];
+
+  @override
+  void initState() {
+
+    knotData = algorithmGenerator.getKnotInfo();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'Design.dart';
 
 class PixelToPattern {
-  // final List<PixelInfo> pattern;
-  // PixelToPattern({required this.pattern});
+  final List<int> pattern;
+  PixelToPattern({required this.pattern});
 
   // CONSTANTS
 
@@ -253,7 +253,7 @@ class PixelToPattern {
     }
   }
 
-  void main() {
+  List<String> getKnotInfo() {
     int colour = 1;
 
     List<List<List<int>>> connectionMatrix = [    // start w/ everything is background colour
@@ -322,8 +322,10 @@ class PixelToPattern {
 
     determineKnotTypes(pattern, guessMatrix, connectionMatrix, colour);
 
-    for (List<String> row in guessMatrix) {
-      print(row);
-    }
+    // for (List<String> row in guessMatrix) {
+    //   print(row);
+    // }
+
+    return [...guessMatrix[0], ...guessMatrix[1], ...guessMatrix[2], ...guessMatrix[3], ...guessMatrix[4]];
   }
 }
