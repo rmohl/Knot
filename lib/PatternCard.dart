@@ -20,7 +20,7 @@ class PatternCard extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width: 260, // Adjust width as needed
+                width: 245, // Adjust width as needed
                 height: 40, // Adjust height as needed
                 decoration: BoxDecoration(
                   color: theme.primaryColorLight,
@@ -34,7 +34,7 @@ class PatternCard extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              Spacer(),
               Column(
                 children: [
                   IconButton(
