@@ -5,7 +5,6 @@ class KnotPattern extends StatelessWidget {
   final List<String> knotData;
   final List<Color> colourData;
 
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -181,10 +180,11 @@ class KnotPattern extends StatelessWidget {
 }
 
 class KnotPainter extends CustomPainter {
-  const KnotPainter({required this.x, required this.y, required this.colour, required this.knotType});
+  KnotPainter({required this.x, required this.y, required this.colour, required this.knotType});
   final double x, y;
   final String knotType;
   final Color colour;
+  bool drawPath = true;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -235,11 +235,15 @@ class KnotPainter extends CustomPainter {
       knot = fbKnot;
     } else if (knotType == "bf") {
       knot = bfKnot;
+    } else if (knotType == "n") {
+      drawPath = false;
     }
 
     // draw knot
     canvas.drawCircle(Offset(x+(size.width/2), y+(size.height/2)), size.width/2, paintFill);
-    canvas.drawPath(knot, paintStroke);
+    if (drawPath) {
+      canvas.drawPath(knot, paintStroke);
+    }
     canvas.drawCircle(Offset(x+(size.width/2), y+(size.height/2)), size.width/2, paintStroke);
   }
 

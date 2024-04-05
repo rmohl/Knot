@@ -17,7 +17,7 @@ class PixelToPattern {
     List<int> rows = [];
 
     // finding max value
-    for (int i = 0; i < pixelArt.length; i++) {
+    for (int i = 0; i < pixelArt.length-1; i++) {
       int count = pixelArt[i].where((element) => element == colour).length;
       if (count > val) {
         val = count;
@@ -25,7 +25,7 @@ class PixelToPattern {
     }
 
     // finding rows with max value
-    for (int i = 0; i < pixelArt.length; i++) {
+    for (int i = 0; i < pixelArt.length-1; i++) {
       int count = pixelArt[i].where((element) => element == colour).length;
       if (count == val) {
         rows.add(i);
@@ -38,7 +38,7 @@ class PixelToPattern {
   bool colourAfter(List<List<int>> pattern, int row1Index, int row2Index, int colour) {
     // check all rows after row 2
     if (row1Index < row2Index) {
-      for (int i = 0; i < pattern.length; i++) {
+      for (int i = 0; i < pattern.length-1; i++) {
         if (i > row2Index) {
           if (pattern[i].contains(colour)) {
             return true;
@@ -47,7 +47,7 @@ class PixelToPattern {
       }
     } else {
       // check all rows before row 1
-      for (int i = 0; i < pattern.length; i++) {
+      for (int i = 0; i < pattern.length-1; i++) {
         if (i < row1Index) {
           if (pattern[i].contains(colour)) {
             return true;
@@ -69,7 +69,7 @@ class PixelToPattern {
 
       // reformat connections
       if (row1.length > row2.length) {
-        for (int i = 0; i < connections.length; i++) {
+        for (int i = 0; i < connections.length-1; i++) {
           if (i != 0) {
             connections[i][LEFT] = backwardsConnections[i - 1][RIGHT];
           }
@@ -78,7 +78,7 @@ class PixelToPattern {
           }
         }
       } else {
-        for (int i = 0; i < connections.length; i++) {
+        for (int i = 0; i < connections.length-1; i++) {
           connections[i][LEFT] = backwardsConnections[i][RIGHT];
           connections[i][RIGHT] = backwardsConnections[i + 1][LEFT];
         }
@@ -86,7 +86,7 @@ class PixelToPattern {
     } else {
       // if row1 has more coloured knots than row2:
       if (row1.length > row2.length) {
-        for (int i = 0; i < row1.length; i++) {
+        for (int i = 0; i < row1.length-1; i++) {
           if (row1[i] == colour) {
             if (i == 0) {
               connections[i][RIGHT] = colour;
@@ -112,7 +112,7 @@ class PixelToPattern {
           }
         }
       } else { // smaller row to bigger row connection
-        for (int i = 0; i < row1.length; i++) {
+        for (int i = 0; i < row1.length-1; i++) {
           if (row1[i] == colour) {
             if (row2[i] == colour) {
               connections[i][LEFT] = colour;
@@ -132,7 +132,7 @@ class PixelToPattern {
   }
 
   List<List<List<int>>> completeStringPaths(List<List<int>> row1, List<List<int>> row2, int colour) {
-    for (int knotIndex = 0; knotIndex < row1.length; knotIndex++) {
+    for (int knotIndex = 0; knotIndex < row1.length-1; knotIndex++) {
       List<int> row1knot = row1[knotIndex];
       if (row1.length > row2.length) { // row1 is longer than row2
         if (knotIndex != 0 && row1knot[LEFT] == colour) {
@@ -210,7 +210,6 @@ class PixelToPattern {
               postRightColour = currKnot[RIGHT];
             }
           }
-
           if (pattern[rowIndex][knotIndex] == colour) {
             if (preLeftColour == colour && postRightColour == colour) {
               knots[rowIndex][knotIndex] = "f";
@@ -241,14 +240,18 @@ class PixelToPattern {
     //row and up:
     if (startRowIndex > 0) {
       for (int rowNum = startRowIndex; rowNum > 0; rowNum--) {
-        connectionMatrix[rowNum] = completeStringPaths(connectionMatrix[rowNum], connectionMatrix[rowNum - 1], colour)[1];
+        List<List<List<int>>> resultRows = completeStringPaths(connectionMatrix[rowNum], connectionMatrix[rowNum - 1], colour);
+        connectionMatrix[rowNum] = resultRows[0];
+        connectionMatrix[rowNum-1] = resultRows[1];
       }
     }
 
     // row and down:
     if (startRowIndex < connectionMatrix.length - 1) {
       for (int rowNum = startRowIndex; rowNum < connectionMatrix.length - 1; rowNum++) {
-        connectionMatrix[rowNum] = completeStringPaths(connectionMatrix[rowNum], connectionMatrix[rowNum + 1], colour)[1];
+        List<List<List<int>>> resultRows = completeStringPaths(connectionMatrix[rowNum], connectionMatrix[rowNum + 1], colour);
+        connectionMatrix[rowNum] = resultRows[0];
+        connectionMatrix[rowNum+1] = resultRows[1];
       }
     }
   }
@@ -302,29 +305,23 @@ class PixelToPattern {
       [pattern[11], pattern[12], pattern[13]],
       [pattern[14], pattern[15], pattern[16], pattern[17]]
     ];
+    List<List<int>> formattedPatternCopy = [
+      [pattern[0], pattern[1], pattern[2], pattern[3]],
+      [pattern[4], pattern[5], pattern[6]],
+      [pattern[7], pattern[8], pattern[9], pattern[10]],
+      [pattern[11], pattern[12], pattern[13]],
+      [pattern[14], pattern[15], pattern[16], pattern[17]]
+    ];
 
-    // List<List<int>> pattern = [
-    //   [0, 1, 0, 0],
-    //   [1, 0, 0],
-    //   [0, 1, 1, 0],
-    //   [1, 1, 0],
-    //   [0, 0, 0, 0]
-    // ];
+    List<int> startingRows = findBiggestRowLessThanN(formattedPatternCopy, colour, 1);
 
-    List<List<int>> patternCopy = List<List<int>>.from(formattedPattern);
-    List<int> startingRows = findBiggestRowLessThanN(patternCopy, colour, 1);
-
-    for (int i = 0; i < patternCopy.length - 1; i++) {
-      connectionMatrix[i] = connectRows(patternCopy, i, i + 1, colour);
+    for (int i = 0; i < formattedPatternCopy.length - 1; i++) {
+      connectionMatrix[i] = connectRows(formattedPatternCopy, i, i + 1, colour);
     }
 
     finalizeConnectionMatrix(connectionMatrix, startingRows[0] - 1, colour);
 
     determineKnotTypes(formattedPattern, guessMatrix, connectionMatrix, colour);
-
-    // for (List<String> row in guessMatrix) {
-    //   print(row);
-    // }
 
     return [...guessMatrix[0], ...guessMatrix[1], ...guessMatrix[2], ...guessMatrix[3], ...guessMatrix[4]];
   }
