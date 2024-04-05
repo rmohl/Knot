@@ -39,6 +39,19 @@ class Design {
       pixelGrid[i] = PixelInfo(color: color);
     }
   }
+
+  List<int> colorsToNums() {
+    // Map the colors to integers: 0 for color1, 1 for color2
+    List<int> numList = pixelGrid.map((pixelInfo) {
+      if (pixelInfo.color == Color(0xFF7395D9)) {
+        return 0;
+      } else {
+        return 1;
+      }
+    }).toList();
+
+    return numList;
+  }
 }
 
 class PixelInfo {

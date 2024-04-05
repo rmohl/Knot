@@ -19,7 +19,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
   late int _selectedTool;
   late Color _selectedColour;
   late Design newDesign;
-  Color color1 = Color(0xFF98E4EE);
+  Color color1 = Color(0xFF7395D9);
   Color color2 = Color(0xFFC498EE);
 
   @override
