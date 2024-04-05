@@ -221,8 +221,9 @@ class _PatternCardState extends State<PatternCard> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text('Changes Will Autosave'),
-                              duration: Duration(seconds: 2),
+                              duration: Duration(seconds: 3),
                               showCloseIcon: true,
+                              padding: EdgeInsets.symmetric(vertical: 30),
                             ),
                           );
 

@@ -843,11 +843,46 @@ class _PixelArtPageState extends State<PixelArtPage> {
                                   duration: Duration(seconds: 2),
                                 ),
                               );
+
+                              Provider.of<DesignListProvider>(context, listen: false).notifyListeners();
+                              Navigator.of(context).popUntil((route) => route.isFirst);
                             }
 
-                            // Trigger a rebuild by notifying listeners
-                            Provider.of<DesignListProvider>(context, listen: false).notifyListeners();
-                            Navigator.of(context).popUntil((route) => route.isFirst);
+                            if  (widget.index == -1){
+                              /// No Create Notif
+                              HapticFeedback.mediumImpact();
+                              showDialog(
+                                context: context,
+                                barrierDismissible: true,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: const Text('Leave Create'),
+                                    content: const SingleChildScrollView(
+                                      child: ListBody(
+                                        children: <Widget>[
+                                          Text('Are you sure you want to leave?'),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        child: const Text('No', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.indigo)),
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                      ),
+                                      TextButton(
+                                        child: const Text('Yes', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.indigo)),
+                                        onPressed: () {
+                                          Provider.of<DesignListProvider>(context, listen: false).notifyListeners();
+                                          Navigator.of(context).popUntil((route) => route.isFirst);
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            }
                           }
                         },
                       ),
