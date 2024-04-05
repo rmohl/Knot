@@ -49,8 +49,19 @@ class Design {
         return 1;
       }
     }).toList();
-
     return numList;
+  }
+
+  List<Color> colorsToList() {
+    // Map the colors to integers: 0 for color1, 1 for color2
+    List<Color> colorList = pixelGrid.map((pixelInfo) {
+      if (pixelInfo.color == Color(0xFF7395D9)) {
+        return Color(0xFF7395D9);
+      } else {
+        return Color(0xFFC498EE);;
+      }
+    }).toList();
+    return colorList;
   }
 }
 
