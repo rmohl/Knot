@@ -20,18 +20,13 @@ class ViewPatternPageState extends State<ViewPatternPage> {
   ViewPatternPageState({required this.index, required this.theme});
   final ThemeData theme;
   final int index;
-
   List<String> knotData = [];
   List<Color> colourData = [];
 
   @override
-
-  @override
   Widget build(BuildContext context) {
     final designListProvider = Provider.of<DesignListProvider>(context);
-
     List<int> numData = designListProvider.getDesignAtIndex(index).colorsToNums();
-
     PixelToPattern algorithmGenerator = PixelToPattern(pattern: numData);
 
     setState(() {

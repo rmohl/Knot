@@ -295,23 +295,23 @@ class PixelToPattern {
     ];
 
     // 1 convert to this format:
-    // List<List<Color>> formattedPattern = [
-    //   [pattern[0].color, pattern[1].color, pattern[2].color, pattern[3].color],
-    //   [pattern[4].color, pattern[5].color, pattern[6].color],
-    //   [pattern[7].color, pattern[8].color, pattern[9].color, pattern[10].color],
-    //   [pattern[11].color, pattern[12].color, pattern[13].color],
-    //   [pattern[14].color, pattern[15].color, pattern[16].color, pattern[17].color]
-    // ];
-
-    List<List<int>> pattern = [
-      [0, 1, 0, 0],
-      [1, 0, 0],
-      [0, 1, 1, 0],
-      [1, 1, 0],
-      [0, 0, 0, 0]
+    List<List<int>> formattedPattern = [
+      [pattern[0], pattern[1], pattern[2], pattern[3]],
+      [pattern[4], pattern[5], pattern[6]],
+      [pattern[7], pattern[8], pattern[9], pattern[10]],
+      [pattern[11], pattern[12], pattern[13]],
+      [pattern[14], pattern[15], pattern[16], pattern[17]]
     ];
 
-    List<List<int>> patternCopy = List<List<int>>.from(pattern);
+    // List<List<int>> pattern = [
+    //   [0, 1, 0, 0],
+    //   [1, 0, 0],
+    //   [0, 1, 1, 0],
+    //   [1, 1, 0],
+    //   [0, 0, 0, 0]
+    // ];
+
+    List<List<int>> patternCopy = List<List<int>>.from(formattedPattern);
     List<int> startingRows = findBiggestRowLessThanN(patternCopy, colour, 1);
 
     for (int i = 0; i < patternCopy.length - 1; i++) {
@@ -320,7 +320,7 @@ class PixelToPattern {
 
     finalizeConnectionMatrix(connectionMatrix, startingRows[0] - 1, colour);
 
-    determineKnotTypes(pattern, guessMatrix, connectionMatrix, colour);
+    determineKnotTypes(formattedPattern, guessMatrix, connectionMatrix, colour);
 
     // for (List<String> row in guessMatrix) {
     //   print(row);
