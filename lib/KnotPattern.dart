@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class KnotPattern extends StatelessWidget {
-  const KnotPattern({super.key, required this.knotData});
-  final List knotData;
+  const KnotPattern({super.key, required this.knotData, required this.colourData});
+  final List<String> knotData;
+  final List<Color> colourData;
 
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
         children: [
           Row(
             children: [
@@ -15,7 +16,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "f"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[0], knotType: knotData[0]),
                 ),
               ),
               SizedBox(width: 20),
@@ -23,7 +24,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "b"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[1], knotType: knotData[1]),
                 ),
               ),
               SizedBox(width: 20),
@@ -31,7 +32,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "fb"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[2], knotType: knotData[2]),
                 ),
               ),
               SizedBox(width: 20),
@@ -39,7 +40,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "bf"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[3], knotType: knotData[3]),
                 ),
               ),
             ],
@@ -52,7 +53,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "f"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[4], knotType: knotData[4]),
                 ),
               ),
               SizedBox(width: 20),
@@ -60,7 +61,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "b"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[5], knotType: knotData[5]),
                 ),
               ),
               SizedBox(width: 20),
@@ -68,7 +69,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "fb"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[6], knotType: knotData[6]),
                 ),
               )
             ],
@@ -80,7 +81,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "f"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[7], knotType: knotData[7]),
                 ),
               ),
               SizedBox(width: 20),
@@ -88,7 +89,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "b"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[8], knotType: knotData[8]),
                 ),
               ),
               SizedBox(width: 20),
@@ -96,7 +97,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "fb"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[9], knotType: knotData[9]),
                 ),
               ),
               SizedBox(width: 20),
@@ -104,7 +105,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "bf"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[10], knotType: knotData[10]),
                 ),
               ),
             ],
@@ -117,7 +118,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "f"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[11], knotType: knotData[11]),
                 ),
               ),
               SizedBox(width: 20),
@@ -125,7 +126,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "b"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[12], knotType: knotData[12]),
                 ),
               ),
               SizedBox(width: 20),
@@ -133,7 +134,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "fb"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[13], knotType: knotData[13]),
                 ),
               )
             ],
@@ -145,7 +146,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "f"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[14], knotType: knotData[14]),
                 ),
               ),
               SizedBox(width: 20),
@@ -153,7 +154,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "b"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[15], knotType: knotData[15]),
                 ),
               ),
               SizedBox(width: 20),
@@ -161,7 +162,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "fb"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[16], knotType: knotData[16]),
                 ),
               ),
               SizedBox(width: 20),
@@ -169,7 +170,7 @@ class KnotPattern extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: KnotPainter(x: 0, y: 0, colour: Colors.pink, knotType: "bf"),
+                  painter: KnotPainter(x: 0, y: 0, colour: colourData[17], knotType: knotData[17]),
                 ),
               ),
             ],

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:convert';
 import 'Design.dart';
 import 'KnotPattern.dart';
 
@@ -20,21 +19,8 @@ class ViewPatternPageState extends State<ViewPatternPage> {
   final ThemeData theme;
   final Design design;
   final int index;
-  List braceletData = [];
-
-  Future<void> readJson() async {
-    final String response = await rootBundle.loadString('assets/bracelet.json');
-    final data = await json.decode(response);
-    setState(() {
-      braceletData = data[0]["knots"];
-    });
-  }
-
-  @override
-  void initState() {
-    readJson();
-    super.initState();
-  }
+  List<String> knotData = [];
+  List<Color> colourData = [];
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +66,7 @@ class ViewPatternPageState extends State<ViewPatternPage> {
               child: Container(
                 width: 270, // Adjust width as needed
                 height: 340, // Adjust height as needed
-                child: KnotPattern(knotData: braceletData)
+                child: KnotPattern(knotData: knotData, colourData: colourData,)
               ),
             ),
           ),
