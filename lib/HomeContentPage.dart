@@ -15,10 +15,16 @@ extension IndexedIterable<E> on Iterable<E> {
   }
 }
 
-class HomeContentPage extends StatelessWidget {
+class HomeContentPage extends StatefulWidget {
   final ThemeData theme;
 
   HomeContentPage({super.key, required this.theme});
+
+  @override
+  _HomeContentPageState createState() => _HomeContentPageState();
+}
+
+class _HomeContentPageState extends State<HomeContentPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +39,12 @@ class HomeContentPage extends StatelessWidget {
               child: ListTile(
                 title: Text(
                     'My Designs:',
-                    style: theme.textTheme.displaySmall
+                    style: widget.theme.textTheme.displaySmall
                 ),
               ),
             ),
             // Pattern Cards for each design
-            ...designListProvider.list.indexedMap((index, design) => PatternCard(design: design, index: index, theme: theme)),
+            ...designListProvider.list.indexedMap((index, design) => PatternCard(design: design, index: index, theme: widget.theme)),
             GestureDetector(
               onTap: () {
                 // Navigate to the detail page when the card is tapped
@@ -46,21 +52,21 @@ class HomeContentPage extends StatelessWidget {
                   builder: (BuildContext context) {
                     return Scaffold(
                       appBar: AppBar(
-                        backgroundColor: theme.primaryColor,
-                        iconTheme: IconThemeData(color: theme.primaryColorDark),
+                        backgroundColor: widget.theme.primaryColor,
+                        iconTheme: IconThemeData(color: widget.theme.primaryColorDark),
                         centerTitle: true,
-                        title: Text('Create Pattern', style: theme.textTheme.displaySmall),
+                        title: Text('Create Pattern', style: widget.theme.textTheme.displaySmall),
                       ),
-                      body: CreatePatternPage(theme: theme),
+                      body: CreatePatternPage(theme: widget.theme),
                     );
                   },
                 ));
               },
               child: Card(
                 child: ListTile(
-                  leading: Icon(Icons.add, color: theme.primaryColorDark),
-                  title: Text('Create', style: theme.textTheme.bodyLarge),
-                  subtitle: Text('Add new pattern', style: theme.textTheme.bodyMedium),
+                  leading: Icon(Icons.add, color: widget.theme.primaryColorDark),
+                  title: Text('Create', style: widget.theme.textTheme.bodyLarge),
+                  subtitle: Text('Add new pattern', style: widget.theme.textTheme.bodyMedium),
                 ),
               ),
             ),

@@ -671,6 +671,9 @@ class _PixelArtPageState extends State<PixelArtPage> {
                                 ),
                               );
                             }
+
+                            // Trigger a rebuild by notifying listeners
+                            Provider.of<DesignListProvider>(context, listen: false).notifyListeners();
                             Navigator.of(context).popUntil((route) => route.isFirst);
                           }
                         },
