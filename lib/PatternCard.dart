@@ -44,7 +44,7 @@ class PatternCard extends StatelessWidget {
                       // Navigate to the edit page when the edit icon is tapped
                       Navigator.push(context, MaterialPageRoute<void>(
                         builder: (BuildContext context) {
-                          return PixelArtPage(design: design, index: index, theme: theme);
+                          return PixelArtPage(index: index, theme: theme);
                         },
                       ));
                     },

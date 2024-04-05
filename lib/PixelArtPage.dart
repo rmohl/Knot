@@ -5,27 +5,37 @@ import 'DesignListProvider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PixelArtPage extends StatefulWidget {
-  final Design? design;
   final ThemeData theme;
   final int index; // Negative on create
 
-  PixelArtPage({super.key, required this.theme, required this.index, this.design});
+  PixelArtPage({super.key, required this.theme, required this.index});
 
   @override
   _PixelArtPageState createState() => _PixelArtPageState();
 }
 
 class _PixelArtPageState extends State<PixelArtPage> {
-  int _selectedTool = 0;
+  late int _selectedTool;
+  late Color _selectedColour;
+  late Design newDesign;
+  Color color1 = Color(0xFF98E4EE);
+  Color color2 = Color(0xFFC498EE);
 
   @override
   void initState() {
     super.initState();
     _selectedTool = 0;
+    _selectedColour = color1;
+    newDesign = Design(
+      previewPath: AssetImage("assets/bracelet.png"),
+      pixelPath: AssetImage("assets/bracelet.png"),
+      knotPath: AssetImage("assets/pattern.png"),
+    );
   }
 
   Widget build(BuildContext context) {
     final designListProvider = Provider.of<DesignListProvider>(context);
+
     return Scaffold(
       /// App Bar
       appBar: AppBar(
@@ -46,7 +56,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                 decoration: BoxDecoration(
                   color: widget.theme.primaryColorLight,
                   image: DecorationImage(
-                    image: widget.index == -1 ? AssetImage("assets/bracelet.png") : widget.design?.previewPath ?? AssetImage("assets/bracelet.png"),
+                    image: AssetImage("assets/bracelet.png"),
                     fit: BoxFit.cover,
                   ),
                   border: Border.all(
@@ -75,14 +85,197 @@ class _PixelArtPageState extends State<PixelArtPage> {
                     height: 200, // Adjust height as needed
                     decoration: BoxDecoration(
                       color: widget.theme.primaryColorLight,
-                      image: DecorationImage(
-                        image: widget.index == -1 ? AssetImage("assets/bracelet.png") : widget.design?.pixelPath ?? AssetImage("assets/bracelet.png"),
-                        fit: BoxFit.cover,
-                      ),
                       border: Border.all(
                         width: 4,
                         color: widget.theme.primaryColorDark
                       ),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[0].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[0].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[1].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[1].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[2].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[2].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[3].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[3].color = _selectedColour;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[4].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[4].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[5].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[5].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[6].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[6].color = _selectedColour;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[7].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[7].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[8].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[8].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[9].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[9].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[10].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[10].color = _selectedColour;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[11].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[11].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[12].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[12].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[13].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[13].color = _selectedColour;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[14].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[14].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[15].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[15].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[16].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[16].color = _selectedColour;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            MyStatefulContainer(
+                              color: newDesign.pixelGrid[17].color,
+                              onTap: () {
+                                setState(() {
+                                  newDesign.pixelGrid[17].color = _selectedColour;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -103,6 +296,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      /// Colour Tool
                       Padding(
                         padding: EdgeInsets.all(4.0), // Adjust the padding as needed
                         child: Container(
@@ -119,6 +313,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               onPressed: () {
                                 setState(() {
                                   _selectedTool = 0;
+                                  _selectedColour = color1;
                                 });
                                 // Add your onPressed logic here
                               },
@@ -127,6 +322,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                         ),
                       ),
                       Divider(color: widget.theme.primaryColor),
+                      /// Eraser Tool
                       Padding(
                         padding: EdgeInsets.all(4.0), // Adjust the padding as needed
                         child: Container(
@@ -143,6 +339,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               onPressed: () {
                                 setState(() {
                                   _selectedTool = 1;
+                                  _selectedColour = Colors.white;
                                 });
                                 // Add your onPressed logic here
                               },
@@ -152,6 +349,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                       ),
                       Divider(color: widget.theme.primaryColor),
                       Spacer(),
+                      /// Delete
                       Visibility(
                         visible: widget.index != -1,
                           child: IconButton(
@@ -194,17 +392,11 @@ class _PixelArtPageState extends State<PixelArtPage> {
                             },
                           ),
                       ),
+                      /// Save
                       IconButton(
                         icon: Icon(Icons.bookmark_border, color: widget.theme.primaryColorDark),
                         tooltip: 'Save',
                         onPressed: () {
-                          // Create a new Design object
-                          Design newDesign = Design(
-                            previewPath: AssetImage("assets/bracelet.png"),
-                            pixelPath: AssetImage("assets/bracelet.png"),
-                            knotPath: AssetImage("assets/pattern.png"),
-                          );
-
                           /// Add the new design to the provider list (CHANGE BEHAVIOUR FOR EDIT)
                           designListProvider.addDesign(newDesign);
 
@@ -217,6 +409,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                           );
                         },
                       ),
+                      /// Exit
                       IconButton(
                         icon: Icon(Icons.exit_to_app, color: widget.theme.primaryColorDark),
                         tooltip: 'Exit',
@@ -232,6 +425,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
           ),
           Spacer(),
           Divider(color: widget.theme.primaryColor, height: 1),
+          /// Bottom Section
           Container(
             color: widget.theme.primaryColor,
             child: Padding(
@@ -239,34 +433,50 @@ class _PixelArtPageState extends State<PixelArtPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
+                    /// Colour One
                     Visibility(
                       visible: _selectedTool == 0, // Show the first container if _selectedTool is 0
-                      child: Container(
-                        width: 45,
-                        height: 45,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: Colors.pinkAccent,
-                          border: Border.all(
-                            width: 2,
-                            color: widget.theme.primaryColorDark,
+                      child: GestureDetector(
+                        child: Container(
+                          width: 45,
+                          height: 45,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: color1,
+                            border: Border.all(
+                              width: _selectedColour == color1 ? 5 : 2,
+                              color: widget.theme.primaryColorDark,
+                            ),
                           ),
                         ),
+                        onTap: () {
+                          setState(() {
+                            _selectedColour = color1;
+                          });
+                        },
                       ),
                     ),
+                    /// Colour Two
                     Visibility(
-                      visible: _selectedTool == 0, // Show the second container if _selectedTool is 0
-                      child: Container(
-                        width: 45,
-                        height: 45,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: Colors.purpleAccent,
-                          border: Border.all(
-                            width: 2,
-                            color: widget.theme.primaryColorDark,
+                      visible: _selectedTool == 0, // Show the first container if _selectedTool is 0
+                      child: GestureDetector(
+                        child: Container(
+                          width: 45,
+                          height: 45,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: color2,
+                            border: Border.all(
+                              width: _selectedColour == color2 ? 5 : 2,
+                              color: widget.theme.primaryColorDark,
+                            ),
                           ),
                         ),
+                        onTap: () {
+                          setState(() {
+                            _selectedColour = color2;
+                          });
+                        },
                       ),
                     ),
                   ],
@@ -274,6 +484,30 @@ class _PixelArtPageState extends State<PixelArtPage> {
               ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class MyStatefulContainer extends StatefulWidget {
+  final Color color;
+  final VoidCallback onTap;
+
+  MyStatefulContainer({required this.color, required this.onTap});
+
+  @override
+  _MyStatefulContainerState createState() => _MyStatefulContainerState();
+}
+
+class _MyStatefulContainerState extends State<MyStatefulContainer> {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: widget.onTap,
+      child: Container(
+        width: 35, // Adjust width of the square
+        height: 35, // Adjust height of the square
+        color: widget.color,
       ),
     );
   }
