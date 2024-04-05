@@ -188,7 +188,7 @@ class KnotPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paintFill = Paint()
-      ..color = Colors.white
+      ..color = colour
       ..strokeWidth = 2
       ..style = PaintingStyle.fill;
     final paintStroke = Paint()
@@ -237,6 +237,7 @@ class KnotPainter extends CustomPainter {
     }
 
     // draw knot
+    canvas.drawCircle(Offset(x+(size.width/2), y+(size.height/2)), size.width/2, paintFill);
     canvas.drawPath(knot, paintStroke);
     canvas.drawCircle(Offset(x+(size.width/2), y+(size.height/2)), size.width/2, paintStroke);
   }
