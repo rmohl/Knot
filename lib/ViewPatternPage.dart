@@ -5,6 +5,7 @@ import 'Design.dart';
 import 'DesignListProvider.dart';
 import 'KnotPattern.dart';
 import 'BraceletAlgorithm.dart';
+import 'PatternCard.dart';
 
 class ViewPatternPage extends StatefulWidget {
   final ThemeData theme;
@@ -22,6 +23,163 @@ class ViewPatternPageState extends State<ViewPatternPage> {
   final int index;
   List<String> knotData = [];
   List<Color> colourData = [];
+
+  List<Widget> buildColumns(pixels) {
+    return [
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[3].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[2].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[1].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[0].color, knotType: 'n'),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[6].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[5].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[4].color, knotType: 'n'),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[10].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[9].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[8].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[7].color, knotType: 'n'),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[13].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[12].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[11].color, knotType: 'n'),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[17].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[16].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[15].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[14].color, knotType: 'n'),
+            ),
+          ),
+        ],
+      ),
+    ];
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,18 +206,23 @@ class ViewPatternPageState extends State<ViewPatternPage> {
             padding: const EdgeInsets.only(top: 20.0, bottom: 10.0), // Adjust the top padding as needed
             child: Center(
               child: Container(
-                width: 300, // Adjust width as needed
-                height: 50, // Adjust height as needed
+                width: 285, // Adjust width as needed
+                height: 40, // A
                 decoration: BoxDecoration(
                   color: theme.primaryColorLight,
-                  image: DecorationImage(
-                    image: AssetImage('assets/pattern.png'),
-                    fit: BoxFit.cover,
-                  ),
                   border: Border.all(
-                      width: 4,
-                      color: theme.primaryColorDark
+                    width: 2,
+                    color: theme.primaryColorDark,
                   ),
+                ),// djust height as needed
+                child: Row (
+                  children: [...buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                    ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                    ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                    ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                    ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                    ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                    ...buildColumns(designListProvider.designList[widget.index].pixelGrid)],
                 ),
               ),
             ),

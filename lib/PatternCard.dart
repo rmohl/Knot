@@ -20,7 +20,7 @@ class PatternCard extends StatefulWidget {
 
 class _PatternCardState extends State<PatternCard> {
 
-  List<Widget> _buildColumns(pixels) {
+  List<Widget> buildColumns(pixels) {
     return [
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -201,12 +201,12 @@ class _PatternCardState extends State<PatternCard> {
                       ),
                       child: Row(
                         children: [
-                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid),
-                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid),
-                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid),
-                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid),
-                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid),
-                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid)
+                          ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                          ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                          ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                          ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                          ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                          ...buildColumns(designListProvider.designList[widget.index].pixelGrid)
                         ],
                     ),
                   ),

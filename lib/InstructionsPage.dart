@@ -387,8 +387,8 @@ class InstructionWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-          Image.asset(image, scale: 5), const SizedBox(height: 10),
-          Image.asset(image2, scale: 5),
+          Image.asset(image, scale: 5.25), const SizedBox(height: 10),
+          Image.asset(image2, scale: 5.25),
           ],
         ));
     }
