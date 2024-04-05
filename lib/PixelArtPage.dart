@@ -101,6 +101,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                         color: widget.theme.primaryColorDark
                       ),
                     ),
+                    /// Pixels
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -111,9 +112,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[0].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[0].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[0].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -121,9 +129,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[1].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[1].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[1].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -131,9 +146,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[2].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[2].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[2].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -141,9 +163,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[3].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[3].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[3].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                           ],
@@ -155,9 +184,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[4].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[4].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[4].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -165,9 +201,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[5].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[5].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[5].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -175,9 +218,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[6].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[6].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[6].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                           ],
@@ -189,9 +239,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[7].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[7].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[7].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -199,9 +256,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[8].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[8].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[8].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -209,9 +273,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[9].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[9].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[9].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -219,9 +290,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[10].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[10].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[10].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                           ],
@@ -233,9 +311,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[11].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[11].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[11].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -243,9 +328,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[12].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[12].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[12].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -253,9 +345,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[13].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[13].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[13].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                           ],
@@ -267,9 +366,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[14].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[14].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[14].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -277,9 +383,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[15].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[15].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[15].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -287,9 +400,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[16].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[16].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[16].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(width: 10),
@@ -297,9 +417,16 @@ class _PixelArtPageState extends State<PixelArtPage> {
                               color: newDesign.pixelGrid[17].color,
                               onTap: () {
                                 HapticFeedback.mediumImpact();
-                                setState(() {
-                                  newDesign.pixelGrid[17].color = _selectedColour;
-                                });
+                                if(_selectedTool == 2){
+                                  setState(() {
+                                    newDesign.fillGrid(_selectedColour);
+                                  });
+                                }
+                                else{
+                                  setState(() {
+                                    newDesign.pixelGrid[17].color = _selectedColour;
+                                  });
+                                }
                               },
                             ),
                           ],
@@ -370,6 +497,32 @@ class _PixelArtPageState extends State<PixelArtPage> {
                                 setState(() {
                                   _selectedTool = 1;
                                   _selectedColour = Colors.white;
+                                });
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                      Divider(color: widget.theme.primaryColor),
+                      /// Fill Tool
+                      Padding(
+                        padding: EdgeInsets.all(4.0), // Adjust the padding as needed
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: _selectedTool == 2 ? widget.theme.primaryColor : Colors.transparent,
+                          ),
+                          child: Center(
+                            child: IconButton(
+                              icon: Icon(FontAwesomeIcons.fillDrip, color: widget.theme.primaryColorDark),
+                              tooltip: 'Fill',
+                              onPressed: () {
+                                HapticFeedback.selectionClick();
+                                setState(() {
+                                  _selectedTool = 2;
+                                  _selectedColour = color1;
                                 });
                               },
                             ),
@@ -534,13 +687,13 @@ class _PixelArtPageState extends State<PixelArtPage> {
           Container(
             color: widget.theme.primaryColor,
             child: Padding(
-              padding: const EdgeInsets.only(top: 22, bottom: 22), // Adjust the top padding as needed
+              padding: const EdgeInsets.only(top: 22, bottom: 22),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     /// Colour One
                     Visibility(
-                      visible: _selectedTool == 0, // Show the first container if _selectedTool is 0
+                      visible: _selectedTool == 0 || _selectedTool == 2,
                       child: GestureDetector(
                         child: Container(
                           width: 45,
@@ -564,7 +717,7 @@ class _PixelArtPageState extends State<PixelArtPage> {
                     ),
                     /// Colour Two
                     Visibility(
-                      visible: _selectedTool == 0, // Show the first container if _selectedTool is 0
+                      visible: _selectedTool == 0 || _selectedTool == 2,
                       child: GestureDetector(
                         child: Container(
                           width: 45,

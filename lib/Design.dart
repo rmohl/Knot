@@ -32,6 +32,13 @@ class Design {
     }
     return false; // Return false if all pixels have colors
   }
+
+  // Method to fill the pixelGrid with the specified color
+  void fillGrid(Color color) {
+    for (int i = 0; i < pixelGrid.length; i++) {
+      pixelGrid[i] = PixelInfo(color: color);
+    }
+  }
 }
 
 class PixelInfo {
