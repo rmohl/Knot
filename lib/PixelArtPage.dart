@@ -228,7 +228,18 @@ class _PixelArtPageState extends State<PixelArtPage> {
                     color: widget.theme.primaryColorDark
                   ),
                 ),
-                child: Row (
+                child: widget.index == -1 ?
+                  Row (
+                    children: [...buildColumns(newDesign.pixelGrid),
+                      ...buildColumns(newDesign.pixelGrid),
+                      ...buildColumns(newDesign.pixelGrid),
+                      ...buildColumns(newDesign.pixelGrid),
+                      ...buildColumns(newDesign.pixelGrid),
+                      ...buildColumns(newDesign.pixelGrid),
+                      ...buildColumns(newDesign.pixelGrid)],
+                  )
+                    :
+                  Row (
                   children: [...buildColumns(designListProvider.designList[widget.index].pixelGrid),
                     ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
                     ...buildColumns(designListProvider.designList[widget.index].pixelGrid),
