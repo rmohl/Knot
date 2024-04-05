@@ -162,9 +162,9 @@ class PixelToPattern {
   }
 
   void determineKnotTypes(List<List<int>> pattern, List<List<String>> knots, List<List<List<int>>> connectionMatrix, int colour) {
-    for (int rowIndex = 0; rowIndex < knots.length; rowIndex++) {
+    for (int rowIndex = 0; rowIndex < knots.length-1; rowIndex++) {
       List<List<int>> currRow = connectionMatrix[rowIndex];
-      for (int knotIndex = 0; knotIndex < knots[rowIndex].length; knotIndex++) {
+      for (int knotIndex = 0; knotIndex < knots[rowIndex].length-1; knotIndex++) {
         List<int> currKnot = currRow[knotIndex];
         if (rowIndex == 0) { // first row
           if ((currKnot[LEFT] == colour && currKnot[RIGHT] == colour) || (currKnot[LEFT] != colour && currKnot[RIGHT] != colour)) {
@@ -248,7 +248,8 @@ class PixelToPattern {
 
     // row and down:
     if (startRowIndex < connectionMatrix.length - 1) {
-      for (int rowNum = startRowIndex; rowNum < connectionMatrix.length - 1; rowNum++) {
+      for (int rowNum = startRowIndex; rowNum < connectionMatrix.length-1; rowNum++) {
+        print(rowNum);
         List<List<List<int>>> resultRows = completeStringPaths(connectionMatrix[rowNum], connectionMatrix[rowNum + 1], colour);
         connectionMatrix[rowNum] = resultRows[0];
         connectionMatrix[rowNum+1] = resultRows[1];
@@ -314,12 +315,13 @@ class PixelToPattern {
     ];
 
     List<int> startingRows = findBiggestRowLessThanN(formattedPatternCopy, colour, 1);
+    // print(startingRows);
 
     for (int i = 0; i < formattedPatternCopy.length - 1; i++) {
       connectionMatrix[i] = connectRows(formattedPatternCopy, i, i + 1, colour);
     }
 
-    finalizeConnectionMatrix(connectionMatrix, startingRows[0] - 1, colour);
+    finalizeConnectionMatrix(connectionMatrix, startingRows[0], colour);
 
     determineKnotTypes(formattedPattern, guessMatrix, connectionMatrix, colour);
 

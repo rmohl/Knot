@@ -19,6 +19,163 @@ class PatternCard extends StatefulWidget {
 }
 
 class _PatternCardState extends State<PatternCard> {
+
+  List<Widget> _buildColumns(pixels) {
+    return [
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[3].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[2].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[1].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[0].color, knotType: 'n'),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[6].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[5].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[4].color, knotType: 'n'),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[10].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[9].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[8].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[7].color, knotType: 'n'),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[13].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[12].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[11].color, knotType: 'n'),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[17].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[16].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[15].color, knotType: 'n'),
+            ),
+          ),
+          SizedBox(
+            width: 8,
+            height: 8,
+            child: CustomPaint(
+              painter: KnotPainter(x: 0, y: 0, colour: pixels[14].color, knotType: 'n'),
+            ),
+          ),
+        ],
+      ),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<DesignListProvider>(
@@ -44,158 +201,13 @@ class _PatternCardState extends State<PatternCard> {
                       ),
                       child: Row(
                         children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[3].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[2].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[1].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[0].color, knotType: 'n'),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[6].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[5].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[4].color, knotType: 'n'),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[10].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[9].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[8].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[7].color, knotType: 'n'),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[13].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[12].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[11].color, knotType: 'n'),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[17].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[16].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[15].color, knotType: 'n'),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                                height: 8,
-                                child: CustomPaint(
-                                  painter: KnotPainter(x: 0, y: 0, colour: designListProvider.designList[widget.index].pixelGrid[14].color, knotType: 'n'),
-                                ),
-                              ),
-                            ],
-                          ),
-                      ],
+                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid),
+                          ..._buildColumns(designListProvider.designList[widget.index].pixelGrid)
+                        ],
                     ),
                   ),
                   Spacer(),
@@ -244,3 +256,159 @@ class _PatternCardState extends State<PatternCard> {
     );
   }
 }
+
+  // List<Widget> _buildColumns() {
+  //   return [
+  //     Column(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[3].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[2].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[1].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[0].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //     Column(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[6].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[5].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[4].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //     Column(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[10].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[9].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[8].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[7].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //     Column(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[13].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[12].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[11].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //     Column(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[17].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[16].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[15].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           width: 8,
+  //           height: 8,
+  //           child: CustomPaint(
+  //             painter: KnotPainter(x: 0, y: 0, colour: pixels[14].color, knotType: 'n'),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   ];
+  // }
