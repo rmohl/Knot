@@ -27,11 +27,16 @@ class ViewPatternPageState extends State<ViewPatternPage> {
   Widget build(BuildContext context) {
     final designListProvider = Provider.of<DesignListProvider>(context);
     List<int> numData = designListProvider.getDesignAtIndex(index).colorsToNums();
+    List<Color> colors = designListProvider.getDesignAtIndex(index).colorsToList();
+    print(numData);
     PixelToPattern algorithmGenerator = PixelToPattern(pattern: numData);
 
     setState(() {
       knotData = algorithmGenerator.getKnotInfo();
+      colourData = colors;
     });
+
+    // print(knotData)
 
     return Scaffold(
       appBar: AppBar(
